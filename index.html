@@ -31,6 +31,12 @@
 				<a class="nav-link" href="#res">Results</a>
 			</li>
 			<li class="nav-item">
+				<a class="nav-link" href="#tech_ppr">Technical Paper</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#prj_vid">Project Video</a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="#teamid">Team</a>
 			</li>
 		</ul>
@@ -148,7 +154,7 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/back.jpg" alt="First slide">
       <div class="carousel-caption">
-			<h1 class="display-2">THE PROBLEM AND SOME IDEAS</h1>
+			<h1 class="display-2 text-center">THE PROBLEM AND SOME IDEAS</h1>
 		</div>
     </div>
     <div class="carousel-item">
@@ -212,7 +218,7 @@
 	<div class="col-lg-8">
 		<br><br><br><br><br><br>
 		<h1>Quadrotor Visualization</h1>
-		<p>Additionally, we’ve chosen to use a visualization tool also created by RESL that shows the quadrotor’s position in its environment and the goal points it is attempting to reach. Along with TensorBoard, the visualization software allows us to analyze and better understand the quadrotor’s performance. Figure 2 shows the visualization environment below.</p>
+		<p>We have extended the visualization tool created by RESL that shows the quadrotor’s position in its environment and the goal points it is attempting to reach. Along with TensorBoard, the visualization software allows us to analyze and better understand the quadrotor’s performance. Figure 2 shows the visualization environment below.</p>
 	</div>
 </div>
 
@@ -228,8 +234,8 @@
 <div class="row padding">
 	<div class="col-12">
 		<h1>Control Policy</h1>
-		<p>Molchanov et al. from RESL learned a unified quadrotor control network to stabilize a quadrotor that hovers at a specified point. Our project extends this work by focusing on path following.<br><br>
-		The final control policy output by our software will be a neural network which both stabilizes the quadrotor and guides it efficiently along specified trajectories. Though we have not yet attempted to run the control policy on a real quadrotor, Molchanov et al [6] had success in doing so on multiple real quadrotors.</p>
+		<p>Molchanov et al. from RESL learned a unified quadrotor control network to stabilize a quadrotor that hovers at a specified point. Our project extends this work by focusing on path following. Our work lets the quadrotor learn to navigate a given trajectory autonomously.<br><br>
+		The final control policy output by our software will be a neural network which both stabilizes the quadrotor and guides it efficiently along specified trajectories. We have not yet attempted to run the control policy on a real quadrotor, but works well on simulation.</p>
 	</div>
 </div>
 </div>
@@ -301,14 +307,14 @@
 		<br><br><br>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4">
-		<a href="index2.html"><h4>1. Explore PPO through REWARD SHAPING.</h4></a>
+		<a href="ppo_reward_shaping.html"><h4>1. Explore PPO through REWARD SHAPING.</h4></a>
 		
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4">
-		<a href="index3.html" ><h4>2. Try other RL algorithms like DDPG.</h4></a>
+		<a href="ddpg.html" ><h4>2. Try other RL algorithms like DDPG.</h4></a>
 	</div>
 	<div class="col-sm-12 col-md-4">
-		<a href="index4.html"><h4>3. Explore state of the art training methodologies:
+		<a href="curriculum_learning.html"><h4>3. Explore state of the art training methodologies:
 			<ul>
 				<li>Curriculum learning </li>
 				<li>Supervised + Reinforcement Learning</li>
@@ -383,10 +389,10 @@
 <div class="container-fluid padding">
 <div class="row text-center padding">
 <div class="col-12">
-	<h1 class="display-4">TECHNICAL PAPER </h1>
+	<h1 class="display-4" id="tech_ppr">TECHNICAL PAPER </h1>
 	<br>
 	<div class='embed-responsive' style='padding-bottom:150%'>
-    	<object data='img/Final Technical Document.pdf' type='application/pdf' width='100%' height='50%'></object>
+    	<object data='Final_Technical_Document.pdf' type='application/pdf' width='100%' height='50%'></object>
 	</div>
 </div>
 </div>
@@ -399,10 +405,10 @@
 <div class="container-fluid padding">
 <div class="row text-center padding">
 <div class="col-12">
-	<h1 class="display-4">PROJECT VIDEO</h1>
+	<h1 class="display-4" id="prj_vid">PROJECT VIDEO</h1>
 	<br>
 	<div class="embed-responsive embed-responsive-16by9">
-	    <iframe class="embed-responsive-item" src="img/samplevideo.mp4" allowfullscreen></iframe>
+	    <iframe class="embed-responsive-item" src="Fyra_final_video.mp4" allowfullscreen></iframe>
 	</div>
 </div>
 
@@ -461,7 +467,7 @@
 		<div class="card">
 			<img class="card-img-top" src="img/push.jpeg" id="pic">
 			<div class="card-body">
-				<h4 class="card-title">Pushpreet Singh</h4>
+				<h4 class="card-title">Pushpreet Singh Hanspal</h4>
 				<p>hanspal@usc.edu</p>
 				<a href="https://www.linkedin.com/in/pushpreet/" class="btn btn-outline-secondary">See profile</a>
 			</div>
@@ -522,42 +528,6 @@
 </div>
 
 
-
-<!--- Two Column Section -->
-<!--
-<div class="container-fluid padding">
-<div class="row padding">
-	<div class="col-lg-6">
-		<h2>Philosophy</h2>
-		<p>jnfjkwnkjfenfke</p>
-		<p>jdfjwenfkjenf</p>
-		<br>
-	</div>
-	<div class="col-lg-6">
-		<img src="img/desk.png" class="img-fluid">
-	</div>
-</div>
-</div>
--->
-
-<!--- Connect -->
-<!--
-<div class="container-fluid padding">
-<div class="row text-center padding">
-	<div class="col-12">
-		<h2>Connect</h2>
-	</div>
-	<div class="col-12 social padding">
-		<a href="#"><i class="fab fa-facebook"></i></a>
-		<a href="#"><i class="fab fa-twitter"></i></a>
-		<a href="#"><i class="fab fa-google-plus-g"></i></a>
-		<a href="#"><i class="fab fa-instagram"></i></a>
-		<a href="#"><i class="fab fa-youtube"></i></a>
-	</div>
-</div>
-</div>
--->
-
 <!--- Footer -->
 <footer>
 <div class="container-fluid padding">
@@ -565,7 +535,7 @@
 
 	<div class="col-12">
 		<hr class="light">
-		<h5>&copy; CSCI599  @MikeZyda</h5>
+		<h5>&copy; USC CSCI599  @MikeZyda</h5>
 	</div>
 </div>	
 </div>	

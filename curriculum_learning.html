@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+	<!-- <a class="navbar-brand" href="#"></a> -->
+	<h1><span>FYRA</span></h1>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</div>
+</nav>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4"><u>CURRICULUM LEARNING</u></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<h4>Taking inspiration from Florensa et al. and Molanchov et al., we employ the assumption that the task of reaching goal states in smaller environments is simpler than in more spacious environments. We first train the quadrotor to reach multiple goal states in a reduced-volume environment. After the quadrotor has mastered the smaller task, we gradually grow the size of the environment, allowing the quadrotor to begin its trajectory from farther start states from the goal positions. <br>
+		Though further exploration of this approach would likely yield positive results, it was not as successful as the reward function we developed.</h4>
+	</div>
+</div>
+
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4"><u>SUPERVISED LEARNING</u></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<h4>In addition to standard reinforcement learning, we will explore the use of supervised learning to create a unified control policy.  To do so, we’ll manually fly the quadrotor using a game controller.  We’ll then train the quadrotor using these human demonstrated trajectories. <br>
+		However, creating trajectories for training would have required a fine-tuned low-level controller, which we were unable to develop due to time constraints.</h4>
+
+	</div>
+</div>
+</div>
+
+
+</body>
+</html>

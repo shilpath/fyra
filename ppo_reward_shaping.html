@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+	<!-- <a class="navbar-brand" href="#"></a> -->
+	<h1><span>FYRA</span></h1>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</div>
+</nav>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4"><u>REWARD SHAPING</u></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<h4>RESL previously explored using OpenAI’s implementations of various algorithms but had the most success with Proximal Policy Optimization (PPO). Thus, as we began development, we chose to further explore PPO. To begin leading the quadrotor to effectively perform path following, we first focused on directly extending RESL’s PPO work by evaluating different reward functions.<br><br><br>
+		<u>Original Reward Function:</u> <br><br>
+		<p>Originally, the reward function penalized the quadrotor based on a number of different factors, including</p>
+		</h4>
+	
+		<ul>
+			<h5>
+			<li>Distance between quadrotor’s position and goal position</li>
+			<li>The amount of control effort exerted by the quadrotor</li>
+			<li>Whether the quadrotor crashed or not</li>
+			<li>Orientation along the Z axis</li>
+			<li>Yaw</li>
+			<li>Uncontrolled rotation about the Z axis</li>
+			<li>How drastically the rotor thrusts in the current action differed from those of the previous action</li>
+			<li>Velocity</li>
+			<li>Attitude</li>
+			</h5>
+		</ul>
+		<br>
+		<h4><u>Restructuring Goal Representation</u></h4>
+		<p><h5>RESL previously trained the quadrotor to hover at a specific point with its z orientation perpendicular to the xy-plane.  To do so, they provided one goal point to the environment. In order to adapt the environment to represent a goal trajectory, we added support for multiple goals. Additionally, we updated the visualization tool to show multiple goals and change the color of each goal reached by the quadrotor. Figure 3 shows two goals in the visualization tool.</p></h5>
+	</div>
+
+	<div class="text-center"> 
+		<div class="col-lg-6 rounded mx-auto">
+			<img src="img/vis2.png" class="img-fluid" style="width: 60%; height: auto;">
+			<p>Figure 3: Visualization tool displaying 2 goals, one of which has been reached by the quadrotor. Note that the quadrotor attempts to maintain its z orientation perpendicular to the xy-plane.</p>
+		</div>
+	</div>
+
+	<div class="col-12">
+		<h4><u>Different Reward Shaping Strategies:</u></h4><br>
+		<ul>
+			<li><h5>Activate loss to next goal when the previous is reached.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					In this approach, we disregarded the error in position between the quadrotor and goals farther along in the given trajectory until the quadrotor came within a certain radius of the preceding goals. This is the most straightforward reward which we could use for multiple goals. Since the loss to each subsequent goal is scaled by 2, the quad should care more about getting to this next goal then staying at the last one.</li>
+					<br>
+					<li><h6>Result:</h6>
+					The controller doesn’t perform well. As soon as the quad reaches the first goal, we start adding the loss to the second goal. This means that it gets a sudden negative reward if it reaches, so the controller just learns to stop right outside the tolerance where it reaches the goal.
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Only current goal is active.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					Since the quadrotor does not need to return to previously reached goals, the reward function only factors in loss for the subsequent goal.</li>
+					<br>
+					<li><h6>Result:</h6>
+					As the quadrotor reaches a goal point, it again gets a negative reward since the loss to the subsequent goal gets factored into the reward function, so it again learns to hover outside of the radius of tolerance and does not learn to navigate through the given goal points.
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Add a constant negative reward for each goal which is not yet reached.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					In the earlier reward functions the quadrotor received a negative reward for the following goal when it reaches the current one.  To address this issue, we add a constant negative reward for each goal which is not yet reached.  When the quadrotor reaches a goal, the constant negative reward is removed and replaced with the loss to the next goal.</li>
+					<br>
+					<li><h6>Result:</h6>
+					This reward function worked well and the quadrotor was finally able to reach the second goal as it was not penalized for reaching each of the target goal points like before by simply the addition of loss to the next goal point. The addition of a constant negative reward for each goal not reached and the removal of this loss when it reached the point rewarded the quad well and  helped it learn to follow the given path.
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Epsilon.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					Our vanilla reward function (described above) simply activated losses for the next goal once a goal has been reached. We came up with an alternative approach where instead of losses being turned on/off using flags, the weight of the loss decreased the closer the quadrotor to that goal. In other words, the error (loss) in position for the current goal would be defined by:
+					<br>loss<sub>position</sub> = epsilon<sub>min</sub> * E<sub>dist</sub> 
+					<br>epsilon<sub>min</sub> = min(epsilon<sub>min</sub>, E<sub>dist</sub>)
+					<br>Where E<sub>dist</sub> is simply the norm of the difference between the position of the goal and the position of the quad. Having the reward scale in this fashion effectively allowed the reward function to “remember” how close the quad got to the goal and assign a reward based on that value.
+					</li>
+					<br>
+					<li><h6>Result:</h6>
+					Although this reward type seemed promising, the plots average reward and average discounted reward was extremely noisy and failed to converge even after prolonged training. We think the nonlinearity that was introduced by epsilon<sub>min</sub> is the primary cause of this.
+
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Simplified Epsilon.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					The motivation for the previous reward function was to scale the loss for the first goal proportional how close you got to that goal. This also changed how sensitive the reward is to the change in position since the position loss now depends on both the distance to the goal, and the scaling factor (which again is a function of the distance to the goal). For this reward, the intuition was to remove this effect while still being able to incorporate the minimum distance to goal. For this, instead of multiplying the min distance to the current distance to goal, we just used the min distance itself to calculate the position loss.
+					</li>
+					<br>
+					<li><h6>Result:</h6>
+					The quadrotor reaches both goals but in a suboptimal manner.
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Velocity in direction of the goal.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					The intuition for this reward type stems from the notion that an optimal trajectory would be one that gets to both goals the fastest. In order to reward this behavior, we added a velocity component to the loss. Specifically, we assigned a continuous loss of  lossvelocity = Vproj , where denotes the weight of the losses relative to the other losses (set to 1 in this case), and  V<sub>proj</sub> is the velocity of the quadrotor in the direction of the next goal.
+					</li>
+					<br>
+					<li><h6>Result:</h6>
+					This reward function ultimately proved to be unsuccessful.
+					</li>
+				</ul>
+			</li>
+			<br>
+
+			<li><h5>Z-Axis Orientation Loss.</h5> 
+				<ul>
+					<li><h6>Description:</h6>
+					We found that the quadrotor continually attempted to remain vertically upright, keeping its z-axis orientation perpendicular to the floor, which prevented it from reaching the goal states in an optimal manner. We first attempted to reduce the degree to which the z-axis orientation loss factored into the reward function. This didn’t have a substantial effect on the quadrotor’s behavior. Additionally, we trained the quadrotor to align its z-axis orientation in the direction of the next goal position. The Z angle to goal is defined by the following equation:
+					<br> Z<sub>angle to goal</sub> = arccos(dot(goal - pos<sub>curr</sub>, pos<sub>curr</sub>)) / (norm(goal - pos<sub>curr</sub>) * norm(pos<sub>curr</sub>))
+					</li>
+					<br>
+					<li><h6>Result:</h6>
+					This did well until the quad reached the first goal although the training took time. After reaching the first goal, the quad found it hard to align itself to the second goal. We initially thought this was because it received a huge loss on reaching the first goal since the error of the orientation wrt the second goal was added. So a value of pi was added and then disabled after reaching the first goal when the error to the second goal was added. But the quad still found it hard to align itself to the second goal even in this situation. The training was done on 3000 iterations. Increasing this number could lead to a better learning which will be tried out in the future.
+					<br>We also attempted to remove the z-axis loss from the reward function after a certain number of training iterations, but this also had little to no effect on the quadrotor’s behavior.
+
+					</li>
+				</ul>
+			</li>
+			<br>
+
+		</ul>
+		<div class="col-12">
+			<img src="img/pic7.png" class="img-fluid">
+		</div>
+		
+	</div>
+</div>
+</div>
+
+
+</body>
+</html>
