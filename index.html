@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+<div class="container-fluid">
+	<!-- <a class="navbar-brand" href="#"></a> -->
+	<h1><span>FYRA</span></h1>
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+	data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarResponsive">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#res">Results</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#teamid">Team</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+</nav>
+
+
+<!--- Image Slider 
+<div id="slides" class="carousel slide" data-ride="carousel">
+<ul class="carousel-indicators">
+	<li data-target="#slides" data-slide-to="0" class="active"></li>
+	<li data-target="#slides" data-slide-to="1"></li>
+	<li data-target="#slides" data-slide-to="2"></li>
+</ul>
+<div class="carousel-inner">
+	<div class="carousel-item active">
+		<img src="img/background.png">
+		<div class="carousel-caption">
+			<h1 class="display-2">Bootstrap</h1>
+			<h3>Complete Website Layout</h3>
+			<button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
+			<button type="button" class="btn btn-primary btn-lg">Get Started</button>
+		</div>
+	</div>
+	<div class="carousel-item">
+		<img src="img/background2.png">
+	</div>
+	<div class="carousel-item">
+		<img src="img/background3.png">
+	</div>
+</div>
+</div>
+-->
+
+
+<!--- Jumbotron -->
+<div class="container-fluid">
+<div class="row text-center jumbotron">
+	<div class="col-12">
+		<h1>QUADROTOR PATH FOLLOWING IN SIMULATION</span></h1>
+	</div>
+</div>
+</div>
+
+<!--
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="img/samplevideo.mp4" allowfullscreen></iframe>
+</div>
+
+-->
+
+
+<!--- Welcome Section -->
+<!--
+<div class="container-fluid padding">
+<div class="row Welcome text-center">
+	<div class="col-12">
+		<h1 class="display-4">INTRODUCTION</h1>
+	</div>
+	
+	<div class="col-12">
+		<p class="lead">This semester, we created a robust and generalized quadrotor control policy which will allow a simulated quadrotor to follow a trajectory in a near-optimal manner.  We created a unified control policy, which can control a quadrotor both low level (mapping environment states to rotor thrusts) and high level (allowing the quadrotor to effectively follow a trajectory).  
+		<br><br>Our approach utilized reinforcement learning and an OpenAI Gym simulation environment.</p>
+		<br>
+		<hr class="light">
+	</div>
+</div>
+</div>
+-->
+
+
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4">OBJECTIVES</h1>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<h4>Create a robust and generalized quadrotor control policy which will allow a simulated quadrotor to follow a trajectory in a near-optimal manner.</h4>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<h4>Utilize an OpenAI Gym environment as the simulation and train using Reinforcement Learning.</h4>
+	</div>
+	<div class="col-sm-12 col-md-4">
+		<h4>Explore state of the art training methodologies:
+			<ul>
+				<li>Proximal Policy Optimization</li>
+				<li>Curriculum learning </li>
+				<li>Supervised + Reinforcement Learning</li>
+			</ul>
+		</h4>
+	</div>
+	<div class="col-12">
+		<hr class="light">
+	</div>
+</div>
+</div>
+
+
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-interval="false" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/back.jpg" alt="First slide">
+      <div class="carousel-caption">
+			<h1 class="display-2">THE PROBLEM AND SOME IDEAS</h1>
+		</div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/pic2.png" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/pic3.png" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/pic4.png" alt="Fourth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+<!--- Two Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4">OVERVIEW</h1>
+		<br>
+	</div>
+</div>
+<div class="row padding">
+	<div class="col-lg-8">
+		<br><br><br><br><br><br><br><br>
+		<h1>Simulation Environment</h1>
+		<p>Our work extends research currently being done in Robotic Embedded Systems Laboratory (RESL) at the University of Southern California. We’re leveraging RESL’s quadrotor simulation environment, which is compatible with Open AI Gym. The environment simulates a quadrotor in an x configuration, as shown in Figure 1, and thoroughly models its dynamics.</p>
+	</div>
+	<div class="col-lg-4">
+		<img src="img/overview.png" class="img-fluid">
+		<p>Figure 1: X configuration of quadrotor.</p>
+	</div>
+</div>
+
+
+
+<div class="col-12">
+	<hr class="light">
+</div>
+
+
+
+
+
+<div class="row padding">
+	<div class="col-lg-4">
+		<img src="img/simenv.png" class="img-fluid">
+		<p>Figure 2: Quadrotor visualization tool. The quadrotor appears in the bottom left along with 2 goal points.</p>
+	</div>
+	<div class="col-lg-8">
+		<br><br><br><br><br><br>
+		<h1>Quadrotor Visualization</h1>
+		<p>Additionally, we’ve chosen to use a visualization tool also created by RESL that shows the quadrotor’s position in its environment and the goal points it is attempting to reach. Along with TensorBoard, the visualization software allows us to analyze and better understand the quadrotor’s performance. Figure 2 shows the visualization environment below.</p>
+	</div>
+</div>
+
+
+
+<div class="col-12">
+	<hr class="light">
+</div>
+
+
+
+</div>
+<div class="row padding">
+	<div class="col-12">
+		<h1>Control Policy</h1>
+		<p>Molchanov et al. from RESL learned a unified quadrotor control network to stabilize a quadrotor that hovers at a specified point. Our project extends this work by focusing on path following.<br><br>
+		The final control policy output by our software will be a neural network which both stabilizes the quadrotor and guides it efficiently along specified trajectories. Though we have not yet attempted to run the control policy on a real quadrotor, Molchanov et al [6] had success in doing so on multiple real quadrotors.</p>
+	</div>
+</div>
+</div>
+
+
+<div class="col-12">
+	<hr class="light">
+</div>
+</div>
+
+
+
+
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12 image1">
+		<h1 class="display-4">THE ENVIRONMENT</h1>
+	</div>
+	<div class="col-12 image1">
+		<img src="img/pic5.png" class="img-fluid">
+	</div>
+	<div class="col-12 image1">
+		<img src="img/pic6.png" class="img-fluid">
+	</div>
+</div>
+</div>
+
+
+
+<hr class="my-4">
+<!--- Fixed background -->
+<figure>
+	<div class="fixed-wrap">
+		<div id="fixed">
+		</div>
+	</div>
+</figure>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12 image1">
+		<h1 class="display-4">IMPROVED VISUALIZATION</h1>
+	</div>
+	<div class="col-lg-6">
+		<img src="img/gif/pic11.gif" class="img-fluid" style="width: 60%; height: auto;">
+	</div>
+	<div class="col-lg-6">
+		<img src="img/gif/pic12.gif" class="img-fluid" style="width: 60%; height: auto;">
+	</div>
+</div>
+</div>
+
+<div class="col-12">
+	<hr class="light">
+</div>
+</div>
+
+
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4">METHODOLOGY</h1>
+		<h3 class="text-muted">Click on each to learn more!</h3>
+		<br><br><br>
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="index2.html"><h4>1. Explore PPO through REWARD SHAPING.</h4></a>
+		
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<a href="index3.html" ><h4>2. Try other RL algorithms like DDPG.</h4></a>
+	</div>
+	<div class="col-sm-12 col-md-4">
+		<a href="index4.html"><h4>3. Explore state of the art training methodologies:
+			<ul>
+				<li>Curriculum learning </li>
+				<li>Supervised + Reinforcement Learning</li>
+			</ul>
+		</h4></a>
+	</div>
+
+	
+	<div class="col-12">
+		<hr class="light">
+	</div>
+</div>
+</div>
+
+<!--- Three Column Section -->
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4" id="res">RESULTS</h1>
+		<!-- <h3 class="text-muted">Click on each!</h3> -->
+		
+	</div>
+	<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-4">
+			<h4>SQUARE TRAJECTORY</h4>
+			<div class="card">
+				<img class="card-img-top" src="img/square0.5.png" id="pic">
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<h4>SQUARE DIAGONAL TRAJECTORY</h4>
+			<div class="card">
+				<img class="card-img-top" src="img/squarediagonal0.5.png" id="pic">
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<h4>UP-DOWN TRAJECTORY</h4>
+			<div class="card">
+				<img class="card-img-top" src="img/updown0.5.png" id="pic">
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+				<iframe class="embed-responsive-item" src="img/square.mp4" height="500" autoplay loop controls muted></iframe>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+				<iframe class="embed-responsive-item" src="img/sqdiag.mp4" height="500" autoplay loop controls muted></iframe>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+				<iframe class="embed-responsive-item" src="img/updown.mp4" height="500" autoplay loop controls muted></iframe>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+<div class="col-12">
+	<hr class="light">
+</div>
+
+<div class="container-fluid padding">
+<div class="row text-center padding">
+<div class="col-12">
+	<h1 class="display-4">TECHNICAL PAPER </h1>
+	<br>
+	<div class='embed-responsive' style='padding-bottom:150%'>
+    	<object data='img/Final Technical Document.pdf' type='application/pdf' width='100%' height='50%'></object>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="col-12">
+	<hr class="light">
+</div>
+
+<div class="container-fluid padding">
+<div class="row text-center padding">
+<div class="col-12">
+	<h1 class="display-4">PROJECT VIDEO</h1>
+	<br>
+	<div class="embed-responsive embed-responsive-16by9">
+	    <iframe class="embed-responsive-item" src="img/samplevideo.mp4" allowfullscreen></iframe>
+	</div>
+</div>
+
+<div class="col-12">
+	<hr class="light">
+</div>
+</div>
+</div>
+
+
+
+<!--- Fixed background -->
+<figure>
+	<div class="fixed-wrap">
+		<div id="fixed">
+		</div>
+	</div>
+</figure>
+
+
+<!--- Meet the team -->
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+	<div class="col-12">
+		<h1 class="display-4" id="teamid">MEET THE TEAM</h1>
+	</div>
+</div>	
+</div>
+
+<!--- Cards -->
+<div class="container-fluid padding">
+<div class="row padding">
+	<div class="col-md-3">
+		<div class="card">
+			<img class="card-img-top" src="img/amy.jpeg" id="pic">
+			<div class="card-body">
+				<h4 class="card-title">Amy Puente</h4>
+				<p>amypuent@usc.edu</p>
+				<a href="https://www.linkedin.com/in/amylpuente/" class="btn btn-outline-secondary">See profile</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="card">
+			<img class="card-img-top" src="img/mish.jpeg" id="pic">
+			<div class="card-body">
+				<h4 class="card-title">Mishari Aliesa</h4>
+				<p>aliesa@usc.edu</p>
+				<a href="https://www.linkedin.com/in/mishari-aliesa-1a4a3a108/" class="btn btn-outline-secondary">See profile</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="card">
+			<img class="card-img-top" src="img/push.jpeg" id="pic">
+			<div class="card-body">
+				<h4 class="card-title">Pushpreet Singh</h4>
+				<p>hanspal@usc.edu</p>
+				<a href="https://www.linkedin.com/in/pushpreet/" class="btn btn-outline-secondary">See profile</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="card">
+			<img class="card-img-top" src="img/shilpa.jpeg" id="pic">
+			<div class="card-body">
+				<h4 class="card-title">Shilpa Thomas</h4>
+				<p>shilpath@usc.edu</p>
+				<a href="https://www.linkedin.com/in/shilpa-thomas/" class="btn btn-outline-secondary">See profile</a>
+			</div>
+		</div>
+	</div>
+
+</div>	
+</div>
+
+<div class="col-12">
+		<hr class="light">
+</div>
+
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h1 class="display-4">REFERENCES</h1>
+		<br><br>
+	</div>
+</div>
+
+	<div class="col-12">
+		<h4>[1] J. Hwangbo, I. Sa, R. Siegwart, and M. Hutter, “Control of a quadrotor with reinforcement learning,” IEEE Robotics and Automation Letters (RA-L), vol. 2, no. 4, pp. 2096–2103, 2017.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[2] F. Sadeghi and S. Levine, “CAD2RL: real single-image flight without a single real image,” Robotics: Science and Systems, 2017.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[3] K. Kang, S. Belkhale, G. Kahn, P. Abbeel, and S. Levine, “Generalization through simulation: Integrating simulated and real data into deep reinforcement learning for vision-based autonomous flight,” IEEE Intl Conf. on Robotics and Automation (ICRA), 2019.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[4] A. Y. Ng, D. Harada, and S. Russell, “Policy invariance under reward transformations: Theory and application to reward shaping,” International Conference in Machine Learning, volume 99, pages 278–287, 1999.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[5] C. Florensa, D. Held, M. Wulfmeier, and P. Abbeel, “Reverse curriculum generation for reinforcement learning,” in CoRL, 2017.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[6] Molchanov, A., Hausman, K., Birchfield, S., Sukhatme, G., “Region Growing Curriculum Generation for Reinforcement Learning,” ArXiv e-prints, 2018.</h4>
+	</div>
+	<div class="col-12">
+		<h4>[7] Molchanov, A., Chen, T., Honig, W., Preiss, J. A., Ayanian, N., and Sukhatme, G. S., “Sim-to-(multi)-real: Transfer of low-level robust control policies to multiple quadrotors,” arXiv preprint arXiv:1903.04628, 2019.</h4>
+	</div>
+	<div class="col-12">
+		<hr class="light">
+	</div>
+
+</div>
+
+
+
+<!--- Two Column Section -->
+<!--
+<div class="container-fluid padding">
+<div class="row padding">
+	<div class="col-lg-6">
+		<h2>Philosophy</h2>
+		<p>jnfjkwnkjfenfke</p>
+		<p>jdfjwenfkjenf</p>
+		<br>
+	</div>
+	<div class="col-lg-6">
+		<img src="img/desk.png" class="img-fluid">
+	</div>
+</div>
+</div>
+-->
+
+<!--- Connect -->
+<!--
+<div class="container-fluid padding">
+<div class="row text-center padding">
+	<div class="col-12">
+		<h2>Connect</h2>
+	</div>
+	<div class="col-12 social padding">
+		<a href="#"><i class="fab fa-facebook"></i></a>
+		<a href="#"><i class="fab fa-twitter"></i></a>
+		<a href="#"><i class="fab fa-google-plus-g"></i></a>
+		<a href="#"><i class="fab fa-instagram"></i></a>
+		<a href="#"><i class="fab fa-youtube"></i></a>
+	</div>
+</div>
+</div>
+-->
+
+<!--- Footer -->
+<footer>
+<div class="container-fluid padding">
+<div class="row text-center">
+
+	<div class="col-12">
+		<hr class="light">
+		<h5>&copy; CSCI599  @MikeZyda</h5>
+	</div>
+</div>	
+</div>	
+</footer>
+
+
+
+</body>
+</html>
+
