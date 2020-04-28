@@ -4,7 +4,7 @@ This project was done as part of USC's CSCI 599 course - Applied Machine Learnin
 
 Team Members: Amy Puente, Mishari Aliesa, Pushpreet Singh Hanspal, Shilpa Thomas
 
-index.html - Project website.
+https://shilpath.github.io/fyra/   -  Project website.
 
 Final_Technical_Document.pdf  - Technical paper on the project
 
